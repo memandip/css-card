@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./card.css">
+
+
+    <title>CSS Card Tricks</title>
+</head>
+
+<body>
+
+    <div class="card-list"></div>
+
+    <script>
+        let date = new Date()
+        months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+        cardListElement = document.querySelector('.card-list'), 
+        cardTemplate = `
+            <article class="card">
+                <header class="card-header">
+                    <p>${months[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}</p>
+                    <h2>Playing around with some css card tricks.</h2>
+                </header>
+
+                <div class="card-author">
+                    <a class="author-avatar" href="#">
+                        <img src="https://avatars0.githubusercontent.com/u/12072166?s=460&u=f8f9d777281ea1f30583471ef5e798745fa839e5&v=4" alt='MT' />
+                    </a>
+                    <svg class="half-circle" viewBox="0 0 106 57">
+                        <path d="M102 4c0 27.1-21.9 49-49 49S4 31.1 4 4"></path>
+                    </svg>
+
+                    <div class="author-name">
+                        <div class="author-name-prefix">Author</div>
+                        Mandip Tharu
+                    </div>
+                </div>
+                <div class="tags">
+                    <a href="#">HTML</a>
+                    <a href="#">CSS</a>
+                    <a href="#">JS</a>
+                    <a href="#">web-dev</a>
+                </div>
+            </article>
+        
+        `
+
+        for(let i=0; i<10; i++){
+            cardListElement.innerHTML += cardTemplate
+        }
+
+    </script>
+
+</body>
+
+</html>
